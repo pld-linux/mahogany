@@ -14,7 +14,7 @@ BuildRequires:	automake
 BuildRequires:	glib-devel
 BuildRequires:	bison
 BuildRequires:	flex
-BuildRequires:	openssl-devel
+BuildRequires:	openssl-devel >= 0.9.7
 BuildRequires:	wxGTK-devel >= 2.2.6
 BuildRequires:	latex2html >= 99.2beta8
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
