@@ -2,8 +2,8 @@ Summary:	The Email Client
 Summary(pl):	Klient poczty
 Name:		mahogany
 Version:	0.62
-Release:	1
-License:	Mahogany Artistic License or GPL
+Release:	2
+License:	Mahogany Artistic or GPL
 Group:		Applications/Mail
 Source0:	http://ftp1.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-confmake.patch
@@ -54,8 +54,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf CHANGES CREDITS README TODO
-
 %find_lang %{name}
 
 %clean
@@ -63,7 +61,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc *.gz
+%doc CHANGES CREDITS README TODO
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
 %{_applnkdir}/*/*/*.desktop
