@@ -5,19 +5,19 @@ Version:	0.62
 Release:	2
 License:	Mahogany Artistic or GPL
 Group:		Applications/Mail
-Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
+Source0:	http://dl.sf.net/mahogany/%{name}-%{version}.tar.bz2
 # Source0-md5:	71c4dd6b0dc1f0712352be68c9e6d706
 Patch0:		%{name}-confmake.patch
-URL:		http://mahogany.sourceforge.net/
 Icon:		mahogany.gif
+URL:		http://mahogany.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	glib-devel
 BuildRequires:	bison
 BuildRequires:	flex
+BuildRequires:	glib-devel
+BuildRequires:	latex2html >= 99.2beta8
 BuildRequires:	openssl-devel >= 0.9.7
 BuildRequires:	wxGTK-devel >= 2.2.6
-BuildRequires:	latex2html >= 99.2beta8
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 
@@ -51,7 +51,8 @@ zdalny serwer SMTP lub lokalny.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %find_lang %{name}
 
