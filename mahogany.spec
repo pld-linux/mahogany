@@ -16,7 +16,7 @@ BuildRequires:	bison
 BuildRequires:	flex
 BuildRequires:	glib-devel
 BuildRequires:	latex2html >= 99.2beta8
-BuildRequires:	openssl-devel >= 0.9.7
+BuildRequires:	openssl-devel >= 0.9.7c
 BuildRequires:	wxGTK-devel >= 2.2.6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
