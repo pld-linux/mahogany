@@ -5,9 +5,6 @@ Version:	0.62
 Release:	1
 License:	Mahogany Artistic License or GPL
 Group:		Applications/Mail
-Group(de):	Applikationen/Post
-Group(pl):	Aplikacje/Poczta
-Group(pt):	Aplicações/Correio Eletrônico
 Source0:	http://ftp1.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-confmake.patch
 URL:		http://mahogany.sourceforge.net/
