@@ -40,7 +40,7 @@ zdalny serwer SMTP lub lokalny.
 
 %build
 aclocal -I ./
-autoconf
+%{__autoconf}
 %configure \
 	--with-threads \
 	--without-debug \
