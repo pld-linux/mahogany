@@ -39,7 +39,7 @@ zdalny serwer SMTP lub lokalny.
 %patch0 -p1
 
 %build
-aclocal -I ./
+%{__aclocal} -I ./
 %{__autoconf}
 %configure \
 	--with-threads \
