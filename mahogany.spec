@@ -5,7 +5,8 @@ Version:	0.62
 Release:	2
 License:	Mahogany Artistic or GPL
 Group:		Applications/Mail
-Source0:	http://ftp1.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
+Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
+# Source0-md5:	71c4dd6b0dc1f0712352be68c9e6d706
 Patch0:		%{name}-confmake.patch
 URL:		http://mahogany.sourceforge.net/
 Icon:		mahogany.gif
