@@ -18,7 +18,7 @@ BuildRequires:	bison
 BuildRequires:	flex
 BuildRequires:	openssl-devel
 BuildRequires:	wxGTK-devel >= 2.2.6
-BuildConflicts:	pilot-link-devel
+BuildRequires:	latex2html >= 99.2beta8
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define         _prefix         /usr/X11R6
@@ -51,14 +51,11 @@ autoconf
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	desktopdir=%{_applnkdir}/Network/Mail \
-	Internetdir=%{_applnkdir}/Network/Mail 
+%makeinstall DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf TODO README NEWS FEATURES AUTHORS ChangeLog
+gzip -9nf CHANGES CREDITS README TODO
 
-%find_lang %{name} --with-gnome
+%find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
