@@ -13,6 +13,7 @@ Patch0:		%{name}-confmake.patch
 URL:		http://mahogany.sourceforge.net/
 Icon:		mahogany.gif
 BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	glib-devel
 BuildRequires:	bison
 BuildRequires:	flex
@@ -25,7 +26,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_mandir		/usr/X11R6/man
 
 %description
-This package contains Mahogany, a powerful, scriptable GUI mail and news client                     using GTK+ toolkit. Mahogany supports remote POP3, IMAP4, NNTP servers as well                      as local MBOX and news spool folders and sending mail using SMTP or local MTA.
+This package contains Mahogany, a powerful, scriptable GUI mail and
+news client using GTK+ toolkit. Mahogany supports remote POP3, IMAP4,
+NNTP servers as well as local MBOX and news spool folders and sending
+mail using SMTP or local MTA.
 
 %description -l pl
 Klient poczty i wiadomo¶ci USENET o ogromnych mo¿liwo¶ciach u¿ywaj±cy GTK+.
@@ -51,7 +55,7 @@ autoconf
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%makeinstall DESTDIR=$RPM_BUILD_ROOT
+%{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 gzip -9nf CHANGES CREDITS README TODO
 
