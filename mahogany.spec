@@ -29,10 +29,10 @@ NNTP servers as well as local MBOX and news spool folders and sending
 mail using SMTP or local MTA.
 
 %description -l pl
-Klient poczty i wiadomo¶ci USENET o ogromnych mo¿liwo¶ciach u¿ywaj±cy GTK+.
-Mahogany obs³uguje protoko³u POP3, IMAP3, NNTP jak równie¿ lokalne spoole
-poczty i wiadomo¶ci USENET oraz wysy³anie poprzez zdalny serwer SMTP lub
-lokalny.
+Klient poczty i wiadomo¶ci USENET o ogromnych mo¿liwo¶ciach u¿ywaj±cy
+GTK+. Mahogany obs³uguje protoko³u POP3, IMAP3, NNTP jak równie¿
+lokalne spoole poczty i wiadomo¶ci USENET oraz wysy³anie poprzez
+zdalny serwer SMTP lub lokalny.
 
 %prep
 %setup -q
@@ -46,7 +46,7 @@ autoconf
 	--without-debug \
 	--with-modules=dynamic \
 	--with-ssl=/usr
-	
+
 %{__make}
 
 %install
