@@ -19,8 +19,6 @@ BuildRequires:	wxGTK-devel >= 2.2.6
 BuildRequires:	latex2html >= 99.2beta8
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define         _prefix         /usr/X11R6
-%define		_mandir		/usr/X11R6/man
 
 %description
 This package contains Mahogany, a powerful, scriptable GUI mail and
