@@ -1,0 +1,133 @@
+diff -urN mahogany-0.62.org/configure.in mahogany-0.62/configure.in
+--- mahogany-0.62.org/configure.in	Sun Mar 25 15:16:58 2001
++++ mahogany-0.62/configure.in	Sun Mar 25 15:25:35 2001
+@@ -181,9 +181,9 @@
+ dnl how to generate dependencies...
+ dnl for now, we just support -MD on gcc
+ dnl NOTICE: this only looks at #include "xxx.h" -- NOT <xxx.h> !!
+-case "$GCC" in yes)
+-	CFLAGS="$CFLAGS -MMD"
+-esac
++#case "$GCC" in yes)
++#	CFLAGS="$CFLAGS -MMD"
++#esac
+ 
+ dnl what is the c-preprocessor?
+ AC_PROG_CPP
+@@ -288,7 +288,7 @@
+ dnl how to generate dependencies...
+ dnl for now, we just support -MD on g++
+ case "$GXX" in
+-yes)	CXXFLAGS="$CXXFLAGS -MD" ;;
++yes)	CXXFLAGS="$CXXFLAGS" ;;
+ *)	AC_MSG_WARN([*** dependencies not supported ***
+ 	Dependencies are not supported for this compiler.  If this
+ 	message appears, then we need to talk---we think we know
+@@ -409,12 +409,6 @@
+ 		USE_OPT=0 ;;
+ 1.no.yes)	MYFLAGS="$MYFLAGS -g" ;;
+ esac
+-
+-case "$USE_OPT" in
+-1)	MYFLAGS="$MYFLAGS -O2" ;;
+-*)	MYFLAGS="$MYFLAGS -O0" ;;
+-esac
+-
+ 
+ case "$USE_PROFILER" in 1)
+ 	MYFLAGS="$MYFLAGS -pg"
+diff -urN mahogany-0.62.org/extra/src/c-client/Makefile mahogany-0.62/extra/src/c-client/Makefile
+--- mahogany-0.62.org/extra/src/c-client/Makefile	Sun Mar 25 15:16:58 2001
++++ mahogany-0.62/extra/src/c-client/Makefile	Sun Mar 25 15:19:38 2001
+@@ -350,7 +350,7 @@
+ 	 SPOOLDIR=/var/spool \
+ 	 ACTIVEFILE=/var/lib/news/active \
+ 	 RSHPATH=/usr/bin/rsh \
+-	 BASECFLAGS="-g -fno-omit-frame-pointer -O6 -DNFSKLUDGE" \
++	 BASECFLAGS="-g -fno-omit-frame-pointer -DNFSKLUDGE" \
+ 	 BASELDFLAGS="-lpam -ldl"
+ 
+ lnx:	# Linux non-shadow passwords
+@@ -490,7 +490,7 @@
+ 	 SPOOLDIR=/var/spool \
+ 	 ACTIVEFILE=/var/lib/news/active \
+ 	 RSHPATH=/usr/bin/rsh \
+-	 BASECFLAGS="-g -fno-omit-frame-pointer -O6 -DNFSKLUDGE" \
++	 BASECFLAGS="-g -fno-omit-frame-pointer -DNFSKLUDGE" \
+ 	 BASELDFLAGS="-lcrypt"
+ 
+ sl4:	# Secure Linux using libc4
+@@ -501,7 +501,7 @@
+ 	 SPOOLDIR=/var/spool \
+ 	 ACTIVEFILE=/var/lib/news/active \
+ 	 RSHPATH=/usr/bin/rsh \
+-	 BASECFLAGS="-g -fno-omit-frame-pointer -O6 -DNFSKLUDGE" \
++	 BASECFLAGS="-g -fno-omit-frame-pointer -DNFSKLUDGE" \
+ 	 BASELDFLAGS="-lshadow"
+ 
+ sl5:	# Secure Linux using libc5
+@@ -512,7 +512,7 @@
+ 	 SPOOLDIR=/var/spool \
+ 	 ACTIVEFILE=/var/lib/news/active \
+ 	 RSHPATH=/usr/bin/rsh \
+-	 BASECFLAGS="-g -fno-omit-frame-pointer -O6 -DNFSKLUDGE"
++	 BASECFLAGS="-g -fno-omit-frame-pointer -DNFSKLUDGE"
+ 
+ snx:	# Siemens Nixdorf SINIX and Reliant UNIX
+ 	$(BUILD) `cat EXTRASPECIALS` OS=sv4 SIGTYPE=psx CHECKPW=sv4 \
+diff -urN mahogany-0.62.org/extra/src/c-client/mh.c mahogany-0.62/extra/src/c-client/mh.c
+--- mahogany-0.62.org/extra/src/c-client/mh.c	Sun Mar 25 15:16:58 2001
++++ mahogany-0.62/extra/src/c-client/mh.c	Sun Mar 25 15:21:39 2001
+@@ -41,6 +41,7 @@
+ #include "osdep.h"
+ #include <pwd.h>
+ #include <sys/stat.h>
++#include <time.h>
+ #include <sys/time.h>
+ #include "mh.h"
+ #include "misc.h"
+diff -urN mahogany-0.62.org/extra/src/c-client/mx.c mahogany-0.62/extra/src/c-client/mx.c
+--- mahogany-0.62.org/extra/src/c-client/mx.c	Sun Mar 25 15:16:58 2001
++++ mahogany-0.62/extra/src/c-client/mx.c	Sun Mar 25 15:22:08 2001
+@@ -41,6 +41,7 @@
+ #include "osdep.h"
+ #include <pwd.h>
+ #include <sys/stat.h>
++#include <time.h>
+ #include <sys/time.h>
+ #include "mx.h"
+ #include "misc.h"
+diff -urN mahogany-0.62.org/extra/src/c-client/news.c mahogany-0.62/extra/src/c-client/news.c
+--- mahogany-0.62.org/extra/src/c-client/news.c	Sun Mar 25 15:16:58 2001
++++ mahogany-0.62/extra/src/c-client/news.c	Sun Mar 25 15:20:25 2001
+@@ -40,6 +40,7 @@
+ #include "mail.h"
+ #include "osdep.h"
+ #include <sys/stat.h>
++#include <time.h>
+ #include <sys/time.h>
+ #include "news.h"
+ #include "misc.h"
+diff -urN mahogany-0.62.org/extra/src/c-client/phile.c mahogany-0.62/extra/src/c-client/phile.c
+--- mahogany-0.62.org/extra/src/c-client/phile.c	Sun Mar 25 15:16:58 2001
++++ mahogany-0.62/extra/src/c-client/phile.c	Sun Mar 25 15:21:16 2001
+@@ -42,6 +42,7 @@
+ #include "osdep.h"
+ #include <pwd.h>
+ #include <sys/stat.h>
++#include <time.h>
+ #include <sys/time.h>
+ #include "phile.h"
+ #include "rfc822.h"
+diff -urN mahogany-0.62.org/include/adb/AdbModule.h mahogany-0.62/include/adb/AdbModule.h
+--- mahogany-0.62.org/include/adb/AdbModule.h	Sun Mar 25 15:16:58 2001
++++ mahogany-0.62/include/adb/AdbModule.h	Sun Mar 25 15:23:31 2001
+@@ -95,7 +95,7 @@
+    virtual const char *GetDescription() const = 0;
+ 
+ private:
+-   friend AdbModuleInfo; // give it access to ms_listModules
++   friend struct AdbModuleInfo; // give it access to ms_listModules
+    static AdbModuleInfo *ms_listModules;
+ };
+ 
