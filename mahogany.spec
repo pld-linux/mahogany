@@ -1,14 +1,14 @@
 Summary:	The Email Client
 Summary(pl):	Klient poczty
 Name:		mahogany
-Version:	0.62
+Version:	0.66
 Release:	2
 License:	Mahogany Artistic or GPL
 Group:		Applications/Mail
-Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
+Source0:	http://dl.sourceforge.net/mahogany/%{name}-%{version}.tar.bz2
 # Source0-md5:	71c4dd6b0dc1f0712352be68c9e6d706
 Patch0:		%{name}-confmake.patch
-Icon:		mahogany.gif
+Icon:		%{name}.gif
 URL:		http://mahogany.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -29,7 +29,7 @@ mail using SMTP or local MTA.
 
 %description -l pl
 Klient poczty i wiadomo¶ci USENET o ogromnych mo¿liwo¶ciach u¿ywaj±cy
-GTK+. Mahogany obs³uguje protoko³u POP3, IMAP3, NNTP jak równie¿
+GTK+. Mahogany obs³uguje protoko³y POP3, IMAP3, NNTP jak równie¿
 lokalne spoole poczty i wiadomo¶ci USENET oraz wysy³anie poprzez
 zdalny serwer SMTP lub lokalny.
 
