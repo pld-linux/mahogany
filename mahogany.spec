@@ -8,7 +8,7 @@ Group:		Applications/Mail
 Source0:	http://dl.sourceforge.net/mahogany/%{name}-%{version}.tar.bz2
 # Source0-md5:	71c4dd6b0dc1f0712352be68c9e6d706
 Patch0:		%{name}-confmake.patch
-Icon:		%{name}.gif
+Icon:		mahogany.gif
 URL:		http://mahogany.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
