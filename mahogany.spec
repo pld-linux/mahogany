@@ -6,7 +6,7 @@ Release:	2
 License:	Mahogany Artistic or GPL
 Group:		Applications/Mail
 Source0:	http://dl.sourceforge.net/mahogany/%{name}-%{version}.tar.bz2
-# Source0-md5:	71c4dd6b0dc1f0712352be68c9e6d706
+# Source0-md5:	1e0a7a6dfcc8e35bdf570e1fe198d7bb
 Patch0:		%{name}-confmake.patch
 URL:		http://mahogany.sourceforge.net/
 BuildRequires:	autoconf
