@@ -1,5 +1,5 @@
 Summary:	The Email Client
-Summary(pl):	Klient poczty
+Summary(pl.UTF-8):   Klient poczty
 Name:		mahogany
 Version:	0.66
 Release:	2
@@ -26,10 +26,10 @@ news client using GTK+ toolkit. Mahogany supports remote POP3, IMAP4,
 NNTP servers as well as local MBOX and news spool folders and sending
 mail using SMTP or local MTA.
 
-%description -l pl
-Klient poczty i wiadomo∂ci USENET o ogromnych moøliwo∂ciach uøywaj±cy
-GTK+. Mahogany obs≥uguje protoko≥y POP3, IMAP3, NNTP jak rÛwnieø
-lokalne spoole poczty i wiadomo∂ci USENET oraz wysy≥anie poprzez
+%description -l pl.UTF-8
+Klient poczty i wiadomo≈õci USENET o ogromnych mo≈ºliwo≈õciach u≈ºywajƒÖcy
+GTK+. Mahogany obs≈Çuguje protoko≈Çy POP3, IMAP3, NNTP jak r√≥wnie≈º
+lokalne spoole poczty i wiadomo≈õci USENET oraz wysy≈Çanie poprzez
 zdalny serwer SMTP lub lokalny.
 
 %prep
