@@ -1,5 +1,5 @@
 Summary:	The Email Client
-Summary(pl.UTF-8):   Klient poczty
+Summary(pl.UTF-8):	Klient poczty
 Name:		mahogany
 Version:	0.66
 Release:	2
